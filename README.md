@@ -2,5 +2,5 @@
 
 *it is simple ToDo app*
 
-**this is the architecture of the project:**
+**This is the architecture of the project:**
 
