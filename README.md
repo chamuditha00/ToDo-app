@@ -3,4 +3,9 @@
 *it is simple ToDo app*
 
 **This is the architecture of the project:**
+
+
 ![architecture of the project](archi.png)
+
+**Features**
+
