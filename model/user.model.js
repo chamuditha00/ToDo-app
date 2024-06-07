@@ -15,6 +15,14 @@ password: {
     required: true,
 
 },
+name: {
+    type: String,
+    required: true,
+},
+phone: {
+    type: Number,
+    required: true,
+},
 
 });
 userSchema.pre('save', async function () {
