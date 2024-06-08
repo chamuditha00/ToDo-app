@@ -21,8 +21,26 @@ name: {
 },
 phone: {
     type: Number,
+    unique: true,
     required: true,
 },
+profileImage: {
+    type: String,
+    default:null
+},
+numOfRentals: {
+    type: Number,
+    default: 0
+},
+numOfVehicle: {
+    type: Number,
+    default: 0
+},
+totalEarning: {
+    type: Number,
+    default: 0
+},
+
 
 });
 userSchema.pre('save', async function () {

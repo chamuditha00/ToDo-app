@@ -6,6 +6,7 @@ const {Schema} = mongoose;
 
 const carSchema = new Schema({
 
+
     userId:{
         type: Schema.Types.ObjectId,
         ref: UserModel.modelName,
@@ -29,8 +30,8 @@ const carSchema = new Schema({
         required: true
     },
     Available: {
-        type: Boolean,
-        default: true
+        type: Number,
+        default: 1
     },
     chargePerExtraKm: {
         type: Number,
