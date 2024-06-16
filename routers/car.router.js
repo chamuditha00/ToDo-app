@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const carController = require('../controller/car.controller');
-const { route } = require('./user.router');
+
 
 router.post('/add',carController.createCar);
 router.get('/getCar',carController.getCar);

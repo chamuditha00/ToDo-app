@@ -28,6 +28,11 @@ profileImage: {
     type: String,
     default:null
 },
+activeRentals: {
+    type: Number,
+    default: 0
+
+},
 numOfRentals: {
     type: Number,
     default: 0
@@ -36,10 +41,21 @@ numOfVehicle: {
     type: Number,
     default: 0
 },
+
+location: {
+    type: String,
+    default:""
+},
+fee:{
+    type: Number,
+    default: 0
+
+},
 totalEarning: {
     type: Number,
     default: 0
 },
+
 
 
 });

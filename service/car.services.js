@@ -1,9 +1,19 @@
 const CarModel = require('../model/car.model');
+const UserModel = require('../model/user.model');
 
 class CarService {
     static async createCar(userId, numberPlate, VehicleType,
         RentPerDay, DepositAmount, chargePerExtraKm, vehicleMeterReading, vehicleImage, kmPerDay) {  
+            const carExist = await CarModel.findOne({numberPlate});
+            if(carExist){
+                throw new Error('Car already exist');
+            }else{
         try{
+            const user = await UserModel.findOne({_id: userId});
+            const numOfVehicle = user.numOfVehicle+1;
+            await UserModel.findOneAndUpdate({_id:userId}, {numOfVehicle});
+            
+
             const createCar = new CarModel({ userId, numberPlate, VehicleType,
                 RentPerDay, DepositAmount, chargePerExtraKm, vehicleMeterReading, vehicleImage, kmPerDay});
             return await createCar.save();
@@ -11,11 +21,13 @@ class CarService {
         catch(error){
             throw error;
         }
+    }
     
 
 }
 static async getCar(userId) {
     try{
+        
         const getCarsdata = await CarModel.find({userId}); 
         return getCarsdata;
     }catch(error){

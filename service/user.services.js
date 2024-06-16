@@ -27,6 +27,7 @@ class UserService {
     static async getUserdata(userId) {
         try{
             const userExist = await UserModel.findOne({_id:userId});
+            
             if(!userExist){
                 throw new Error('User not found');
             }
